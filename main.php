@@ -16,3 +16,37 @@ class Animal{
     }
 }
 
+interface CanGiveMilk {
+    public function getMilk(): int;
+}
+
+interface CanGiveEggs {
+    public function getEggs(): int;
+}
+
+class Cow extends Animal implements CanGiveMilk{
+
+    public function __construct()
+    {
+    		parent::__construct('cow');
+    }
+
+    public function getMilk(): int
+    {
+        return $this->getProduct(8, 12);
+    }
+}
+
+class Hen extends Animal implements CanGiveEggs{
+
+    public function __construct()
+    {
+        parent::__construct('hen');
+    }
+
+    public function getEggs(): int
+    {
+        return $this->getProduct(0, 1);
+    }
+}
+
